@@ -16,15 +16,16 @@ thm_blue="#89b4fa"
 thm_orange="#fab387"
 thm_black4="#585b70"
 
+wedge_bg=terminal
 wedge_left="█"
 wedge_right="█"
 
 wedge() {
-	printf '%s' "#[fg=$2,bg=$thm_bg]" \
+	printf '%s' "#[fg=$2,bg=$wedge_bg]" \
 		"$wedge_left" \
 		"#[fg=$thm_bg,bg=$2]" \
 		"$1" \
-		"#[fg=$2,bg=$thm_bg]" \
+		"#[fg=$2,bg=$wedge_bg]" \
 		"$wedge_right"
 }
 
@@ -40,7 +41,7 @@ else
 	TMUX_POWERLINE_SEPARATOR_RIGHT_THIN="❯"
 fi
 
-TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR:-$thm_bg}
+TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_BACKGROUND_COLOR:-$wedge_bg}
 TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR=${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR:-$thm_fg}
 
 TMUX_POWERLINE_DEFAULT_LEFTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_LEFTSIDE_SEPARATOR:-$TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD}
