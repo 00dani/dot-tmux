@@ -1,5 +1,7 @@
+#!/bin/bash
 # If changes made here does not take effect, then try to re-create the tmux session to force reload.
 
+# copied from catppuccin/tmux Mocha https://github.com/catppuccin/tmux/blob/main/catppuccin-mocha.tmuxtheme
 thm_bg="#1e1e2e"
 thm_fg="#cdd6f4"
 thm_cyan="#89dceb"
@@ -47,17 +49,17 @@ TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SEPARATOR=${TMUX_POWERLINE_DEFAULT_RIGHTSIDE_SE
 # See man tmux.conf for additional formatting options for the status line.
 # The `format regular` and `format inverse` functions are provided as conveniences
 
-if [ -z $TMUX_POWERLINE_WINDOW_STATUS_CURRENT ]; then
+if [[ -z $TMUX_POWERLINE_WINDOW_STATUS_CURRENT ]]; then
 	TMUX_POWERLINE_WINDOW_STATUS_CURRENT=" #W $(wedge "#I" "$thm_orange")"
 fi
 
-if [ -z $TMUX_POWERLINE_WINDOW_STATUS_STYLE ]; then
+if [[ -z $TMUX_POWERLINE_WINDOW_STATUS_STYLE ]]; then
 	TMUX_POWERLINE_WINDOW_STATUS_STYLE=(
 		"$(format regular)"
 	)
 fi
 
-if [ -z $TMUX_POWERLINE_WINDOW_STATUS_FORMAT ]; then
+if [[ -z $TMUX_POWERLINE_WINDOW_STATUS_FORMAT ]]; then
 	TMUX_POWERLINE_WINDOW_STATUS_FORMAT=" #W $(wedge "#I" "$thm_blue")"
 fi
 
@@ -88,40 +90,40 @@ fi
 # separator_foreground_color options must still be specified so that appropriate index
 # of options to support the spacing_disable and separator_disable features can be used
 
-if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
+if [[ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-		"mode_indicator 33" \
-		#"tmux_session_info 148 234" \
-		#"hostname 33 0" \
-		#"ifstat 30 255" \
-		#"ifstat_sys 30 255" \
-		#"lan_ip 24 255 ${TMUX_POWERLINE_SEPARATOR_RIGHT_THIN}" \
-		#"wan_ip 24 255" \
-		"vcs_branch $thm_gray $thm_blue" \
-		#"vcs_compare 60 255" \
-		#"vcs_staged 64 255" \
-		#"vcs_modified 9 255" \
-		#"vcs_others 245 0" \
+		"mode_indicator 33"
+		#"tmux_session_info 148 234"
+		#"hostname 33 0"
+		#"ifstat 30 255"
+		#"ifstat_sys 30 255"
+		#"lan_ip 24 255 ${TMUX_POWERLINE_SEPARATOR_RIGHT_THIN}"
+		#"wan_ip 24 255"
+		"vcs_branch $thm_gray $thm_blue"
+		#"vcs_compare 60 255"
+		#"vcs_staged 64 255"
+		#"vcs_modified 9 255"
+		#"vcs_others 245 0"
 	)
 fi
 
-if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
+if [[ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]]; then
 	TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
-		#"earthquake 3 0" \
-		"pwd $thm_pink $thm_bg" \
-		#"macos_notification_count 29 255" \
-		#"mailcount 9 255" \
-		"now_playing 234 37" \
-		#"cpu 240 136" \
-		#"load 237 167" \
-		#"tmux_mem_cpu_load 234 136" \
-		"battery 137 127" \
-		#"weather 37 255" \
-		#"rainbarf 0 ${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR}" \
-		#"xkb_layout 125 117" \
-		#"date_day 235 136" \
-		#"date 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
-		#"time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
-		#"utc_time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+		#"earthquake 3 0"
+		"pwd $thm_pink $thm_bg"
+		#"macos_notification_count 29 255"
+		#"mailcount 9 255"
+		"now_playing 234 37"
+		#"cpu 240 136"
+		#"load 237 167"
+		#"tmux_mem_cpu_load 234 136"
+		"battery 137 127"
+		#"weather 37 255"
+		#"rainbarf 0 ${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR}"
+		#"xkb_layout 125 117"
+		#"date_day 235 136"
+		#"date 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
+		#"time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
+		#"utc_time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
 	)
 fi
