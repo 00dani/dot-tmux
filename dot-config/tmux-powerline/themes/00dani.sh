@@ -93,7 +93,7 @@ fi
 
 if [[ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-		"mode_indicator 33"
+		"mode_indicator default default ${TMUX_POWERLINE_SEPARATOR_RIGHT_BOLD} default default both_disable"
 		#"tmux_session_info 148 234"
 		#"hostname 33 0"
 		#"ifstat 30 255"
